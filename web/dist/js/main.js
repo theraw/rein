@@ -783,11 +783,11 @@ function file_video(path) {
       </button>
       <ul class="mdui-menu" id="player-items">${player_items}</ul>`;
 
+	
   const content = `
 <div class="mdui-container-fluid">
 	<br>
     <div id="playerContainer"></div>
-    <script src="https://cdn.jsdelivr.net/npm/indigo-player@1/lib/indigo-player.js"></script>
     <script>
       const config = {
         sources: [
@@ -797,10 +797,8 @@ function file_video(path) {
           }
         ],
       };
-
       const element = document.getElementById('playerContainer');
       const player = IndigoPlayer.init(element, config);
-
       // You can use the player object now to access the player and it's methods (play, pause, ...)
     </script>
 
