@@ -1,8 +1,8 @@
 const authConfig = {
-  "siteName": "Bhadoo Cloud GoIndex", // Website name
-  "version": "1.1", // Program Version. Users do not modify manually
-  "client_id": "58094879805-4654k2k5nqdid5bavft7fvea5u9po0t1.apps.googleusercontent.com",
-  "client_secret": "ZNPZ-vS6N9Zjsyb_sNMZmXHL",
+  "siteName": "DopeDrive", // Website name
+  "version": "6.9", // Program Version. Users do not modify manually
+  "client_id": "1015745153416-jbpnkkq1i8djh08jj1fep0k8l3mbf3ko.apps.googleusercontent.com",
+  "client_secret": "5fS6NN_CX6q9lY2M9qdEkf0w",
   "refresh_token": "", // Authorize token
   /**
    * Set up multiple Drives to display; add multiples by format
