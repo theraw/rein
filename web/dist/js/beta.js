@@ -785,23 +785,15 @@ function file_video(path) {
 
 	
   const content = `
-<div class="mdui-container-fluid">
-	<br>
-    <div id="playerContainer"></div>
-    <script>
-      console.log(url);
-      const config = {
-        sources: [
-          {
-            type: 'mp4',
-            src: '${url}',
-          }
-        ],
-      };
-      const element = document.getElementById('playerContainer');
-      const player = IndigoPlayer.init(element, config);
-      // You can use the player object now to access the player and it's methods (play, pause, ...)
-    </script>
+<div class="container">
+    <video controls crossorigin playsinline poster="${url}.jpg" id="player">
+        <source src="${url}" type="video/mp4">
+
+       <track kind="captions" label="English" srclang="en" src="${url}.vtt" default>
+
+        <!-- Fallback for browsers that don't support the <video> element -->
+        <a href="${url}" download>Download</a>
+    </video>
 </div>
 	`;
 }
