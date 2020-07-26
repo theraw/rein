@@ -786,6 +786,7 @@ function file_video(path) {
   const content = `
 <div class="mdui-container-fluid">
 	<br>
+<link rel="stylesheet" href="https://unpkg.com/plyr@3.6.2/dist/plyr.css" />
 <div class="container">
     <video controls crossorigin playsinline poster="//image.tmdb.org/t/p/original/hTExot1sfn7dHZjGrk0Aiwpntxt.jpg" id="player">
         <source src="${url}" type="video/mp4">
@@ -805,17 +806,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 </script>
-	<br>${playBtn}
-	<div class="mdui-textfield">
-	  <label class="mdui-textfield-label">Download Link</label>
-	  <input class="mdui-textfield-input" type="text" value="${url}"/>
-	</div>
-	<div class="mdui-textfield">
-	  <label class="mdui-textfield-label">HTML Reference address</label>
-	  <textarea class="mdui-textfield-input"><video><source src="${url}" type="video/mp4"></video></textarea>
-	</div>
-</div>
-<a href="${url}" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">file_download</i></a>
+<script src="https://unpkg.com/plyr@3.6.2/dist/plyr.min.js"></script>
 	`;
   $('#content').html(content);
   $('#copy-link').on('click', () => {
@@ -904,10 +895,6 @@ function file_image(path) {
             </div>
             `;
     }
-    // <div id="btns" >
-    //             ${targetObj[path].prev ? `<span id="leftBtn" data-direction="left" data-filepath="${targetObj[path].prev}"><i class="mdui-icon material-icons">&#xe5c4;</i><span style="margin-left: 10px;">Prev</span></span>` : `<span style="cursor: not-allowed;color: rgba(0,0,0,0.2);margin-bottom:20px;"><i class="mdui-icon material-icons">&#xe5c4;</i><span style="margin-left: 10px;">Prev</span></span>`}
-    //             ${targetObj[path].next ? `<span id="rightBtn" data-direction="right"  data-filepath="${targetObj[path].next}"><i class="mdui-icon material-icons">&#xe5c8;</i><span style="margin-left: 10px;">Next</span></span>` : `<span style="cursor: not-allowed;color: rgba(0,0,0,0.2);"><i class="mdui-icon material-icons">&#xe5c4;</i><span style="margin-left: 10px;">Prev</span></span>`}
-     //</div>
   }
   var content = `
 <div class="mdui-container-fluid">
