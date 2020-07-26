@@ -783,20 +783,38 @@ function file_video(path) {
       </button>
       <ul class="mdui-menu" id="player-items">${player_items}</ul>`;
 
-	
   const content = `
+<div class="mdui-container-fluid">
+	<br>
 <div class="container">
-    <video controls crossorigin playsinline poster="${url}.jpg" id="player">
+    <video controls crossorigin playsinline poster="//image.tmdb.org/t/p/original/hTExot1sfn7dHZjGrk0Aiwpntxt.jpg" id="player">
         <source src="${url}" type="video/mp4">
 
-       <track kind="captions" label="English" srclang="en" src="${url}.vtt" default>
+       <track kind="captions" label="English" srclang="en" src="https://stream01.dopemovie.io/0:/Alex.Rider.S01/e1.mp4.vtt" default>
 
         <!-- Fallback for browsers that don't support the <video> element -->
         <a href="${url}" download>Download</a>
     </video>
 </div>
+	<br>${playBtn}
+	<div class="mdui-textfield">
+	  <label class="mdui-textfield-label">Download Link</label>
+	  <input class="mdui-textfield-input" type="text" value="${url}"/>
+	</div>
+	<div class="mdui-textfield">
+	  <label class="mdui-textfield-label">HTML Reference address</label>
+	  <textarea class="mdui-textfield-input"><video><source src="${url}" type="video/mp4"></video></textarea>
+	</div>
+</div>
+<a href="${url}" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">file_download</i></a>
 	`;
+  $('#content').html(content);
+  $('#copy-link').on('click', () => {
+    copyToClipboard(url);
+    mdui.snackbar('Copied to clipboard!');
+  });
 }
+
 
 // File display Audio |mp3|flac|m4a|wav|ogg|
 function file_audio(path) {
