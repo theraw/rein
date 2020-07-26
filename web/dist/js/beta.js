@@ -796,6 +796,15 @@ function file_video(path) {
         <a href="${url}" download>Download</a>
     </video>
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const player = new Plyr('#player');
+  window.player = player;
+  function on(selector, type, callback) {
+    document.querySelector(selector).addEventListener(type, callback, false);
+  }
+});
+</script>
 	<br>${playBtn}
 	<div class="mdui-textfield">
 	  <label class="mdui-textfield-label">Download Link</label>
