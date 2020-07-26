@@ -789,6 +789,7 @@ function file_video(path) {
 	<br>
     <div id="playerContainer"></div>
     <script>
+      console.log(url);
       const config = {
         sources: [
           {
@@ -801,24 +802,8 @@ function file_video(path) {
       const player = IndigoPlayer.init(element, config);
       // You can use the player object now to access the player and it's methods (play, pause, ...)
     </script>
-
-	<br>${playBtn}
-	<div class="mdui-textfield">
-	  <label class="mdui-textfield-label">Download Link</label>
-	  <input class="mdui-textfield-input" type="text" value="${url}"/>
-	</div>
-	<div class="mdui-textfield">
-	  <label class="mdui-textfield-label">HTML Reference address</label>
-	  <textarea class="mdui-textfield-input"><video><source src="${url}" type="video/mp4"></video></textarea>
-	</div>
 </div>
-<a href="${url}" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">file_download</i></a>
 	`;
-  $('#content').html(content);
-  $('#copy-link').on('click', () => {
-    copyToClipboard(url);
-    mdui.snackbar('Copied to clipboard!');
-  });
 }
 
 // File display Audio |mp3|flac|m4a|wav|ogg|
